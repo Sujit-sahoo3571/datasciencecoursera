@@ -33,7 +33,6 @@ ddiv <- function(){
   print(x)
   print("ddiv() end here thank you ")
 }
-
 ccon <- function(){
 x<- c(0.5,0.6)
 print(x)
@@ -67,14 +66,96 @@ x<- 0:6
 print(x)
 print(as.character(x))
 print(as.logical(x))
+print(as.complex(x))
 print("  NAs ")
 x<- c("a","b","c")
+print(x)
 print(as.logical(x))
 print(as.integer(x))
 print(as.numeric(x))
-
+print(as.complex(x))
 }
 
+cmatrix<-function(){
+  m <-matrix(1:6 , nrow = 2, ncol = 3)
+  print(m)
+  print(dim(m))
+ print(attributes(m))
+ m<- 1:10 
+ print(m)
+ dim(m)<-c(2,5)
+  print(m)
+print("cbind()  rbind() ")
+ x<- 1:3
+ y<-10:12
+ # cbind(x,y)
+ print(cbind(x,y))
+ print(rbind(x,y))
+  
+}
+cfactor <- function(){
+  print("factor label with name ")
+  f<- factor(c("yes","yes","no","yes","no"))
+  print("print factor f")
+  print(f)
+  print("factor table(f)")
+  print(table(f))
+  print("unclass(f) ")
+  print(unclass(f))
+  print("custom factor ")
+  
+  f<- factor(c("yes","yes","no","yes","no"), levels = c("yes","no"))
+  print("print factor f")
+  print(f)
+  print("factor table(f)")
+  print(table(f))
+  print("unclass(f) ")
+  print(unclass(f))
 
+  
+  
+}
+cmiss <- function(){
+
+  print(" Nan and NA  ")
+  x<- c(1,2,NA, 10,3)
+ print( is.na(x))
+ print(is.nan(x))
+ x<- c(1,2,NA,4,6,NaN)
+ print( is.na(x))
+ print(is.nan(x))
+  
+}
+cframe <- function(){
+  x <- data.frame(foo = 1:4 , bar = c(T,T,F,F))
+  print(x)
+  print(nrow(x))
+  print(ncol(x))
+  print(data.matrix(x))
+  print(table(x))
+  # error -> "" ,print(read.table(x))
+}
+
+cname <- function(){
+  x<- 1:3
+  print(x)
+  y <- names(x)
+  print(y)
+  names(x)<- c("h","i","!")
+  print(x)
+  print(names(x))
+  x<- list(a=1,b=2,c=3)
+  print(x)
+  m<- matrix(1:4, nrow = 2, ncol = 2)
+ print("m and dimnames ")
+   print(m)
+  print(dimnames(m))
+  dimnames(m)<- list(c("a","b"),c("c","d"))
+  print("m and dimnames after modify   ")
+  print(m)
+  print(dimnames(m))
+
+  
+}
 
 
